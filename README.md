@@ -172,11 +172,11 @@ pins in its own docstring, so the IDs are provenance labels, not required readin
   deployed Worker, and the three ghost buttons reproduce the three refusals — a tampered
   amount, a misheard name, and a bare "dollars" that never says whose dollars.
   `GET /api/health` returns `{"ok": true, "python": "3.13.2"}`.
-- **Video:** [`media/demo.mp4`](media/demo.mp4) — 4:16, 1920×1080, with
+- **Video:** <https://youtu.be/wE1RtY_qOr0> (unlisted) — 4:16, 1920×1080. The same
+  file is in this repo as [`media/demo.mp4`](media/demo.mp4), with
   [`media/demo.srt`](media/demo.srt) as captions. The SRT is not a transcript made
   after the fact: it is the text that was rendered into the narration track, so what
   the video *says* is readable here as plain text. What it *shows* is not.
-  _A hosted link goes here once the file is uploaded._
 - **Slides:** [`media/slides.pdf`](media/slides.pdf) · cover image: [`media/cover.png`](media/cover.png)
 
 <!-- 🔴 The first two are written as visible text, not HTML comments. A comment
