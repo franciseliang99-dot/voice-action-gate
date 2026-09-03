@@ -5,11 +5,11 @@
   "files": [
     {
       "path": "LICENSE",
-      "sha256": "dad8e510819b9c51a86667f80929729cefddcb662b77fd4a00a21d0a28e79cb4"
+      "sha256": "4737576c753ed47f1632ffa4257ec98c0544fe4f87b4554aa82e788220f9be20"
     },
     {
       "path": "README.md",
-      "sha256": "1b2ff3e891a4aa8206696445536a83d8fdeaad7c3c9302cd59caea44523f0464"
+      "sha256": "0d92139791bae1c4abec6e51bc547c68bf84c2932e9467ab3ca868797a3dd1e1"
     },
     {
       "path": "app/.dev.vars.example",

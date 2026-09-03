@@ -197,4 +197,4 @@ confirmation" is a problem you have, that page has a way to get in touch.
 
 ## License
 
-Apache-2.0 — full text in [`LICENSE`](LICENSE).
+MIT — full text in [`LICENSE`](LICENSE).
