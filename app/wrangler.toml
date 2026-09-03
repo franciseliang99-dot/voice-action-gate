@@ -1,0 +1,19 @@
+name = "voice-action-gate"
+main = "worker/main.py"
+compatibility_date = "2026-08-01"
+compatibility_flags = ["python_workers"]
+
+# Static UI. The Worker only sees /api/*; everything else is served from ./web.
+[assets]
+directory = "./web"
+binding = "ASSETS"
+
+# The daily issuance counter. A Durable Object, NOT KV -- see DailyQuota's
+# docstring in worker/main.py for why eventual consistency breaks the ceiling.
+[[durable_objects.bindings]]
+name = "QUOTA"
+class_name = "DailyQuota"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["DailyQuota"]

@@ -1,0 +1,336 @@
+1
+00:00:00,000 --> 00:00:05,900
+This is Voice Action Gate, a voice agent
+that cannot execute an irreversible
+
+2
+00:00:05,900 --> 00:00:11,620
+action, unless every argument it uses
+traces back to words you actually said.
+
+3
+00:00:12,700 --> 00:00:13,760
+Not more accurate.
+
+4
+00:00:15,200 --> 00:00:16,540
+A different failure direction.
+
+5
+00:00:17,360 --> 00:00:19,540
+Speech recognition is good.
+
+6
+00:00:21,020 --> 00:00:22,120
+Not perfect.
+
+7
+00:00:23,020 --> 00:00:28,380
+Five hundred and five thousand differ by
+one, close token, and by a factor of ten.
+
+8
+00:00:29,360 --> 00:00:32,700
+That is why voice agents in banking are
+still read only.
+
+9
+00:00:33,780 --> 00:00:35,300
+They will tell you your balance.
+
+10
+00:00:36,680 --> 00:00:38,280
+They will not move your money.
+
+11
+00:00:39,880 --> 00:00:42,560
+The usual answer is to push accuracy
+higher.
+
+12
+00:00:43,720 --> 00:00:45,440
+Accuracy is an asymptote.
+
+13
+00:00:46,340 --> 00:00:48,740
+So this is not a check that can fail.
+
+14
+00:00:48,740 --> 00:00:51,020
+It is a capability.
+
+15
+00:00:51,920 --> 00:00:57,340
+The code that moves money accepts only an
+execute credential, and that credential
+
+16
+00:00:57,340 --> 00:01:00,400
+has exactly one construction site, the
+gate.
+
+17
+00:01:01,480 --> 00:01:03,840
+And this is the part that carries the
+weight.
+
+18
+00:01:04,960 --> 00:01:09,380
+The witness set is built from the
+transcript alone before the proposal is visible.
+
+19
+00:01:10,300 --> 00:01:14,440
+Otherwise, a model that invents a number
+gets to pick the search query.
+
+20
+00:01:15,160 --> 00:01:17,180
+This page is what we actually ran.
+
+21
+00:01:18,000 --> 00:01:19,820
+I will come back to it.
+
+22
+00:01:21,460 --> 00:01:23,280
+The agent here is deliberately dumb.
+
+23
+00:01:24,680 --> 00:01:25,200
+A reggy up.
+
+24
+00:01:25,980 --> 00:01:27,380
+It is allowed to be wrong.
+
+25
+00:01:28,500 --> 00:01:30,800
+The gate is what makes being wrong safe.
+
+26
+00:01:32,120 --> 00:01:34,360
+Send five hundred US dollars to Alice.
+
+27
+00:01:35,180 --> 00:01:35,780
+Allow.
+
+28
+00:01:36,980 --> 00:01:40,740
+Every argument was spoken, each traced
+back to the exact words.
+
+29
+00:01:42,200 --> 00:01:43,480
+Capability minted.
+
+30
+00:01:44,500 --> 00:01:46,700
+Now the model changes its mind.
+
+31
+00:01:48,140 --> 00:01:49,420
+Five thousand.
+
+32
+00:01:50,760 --> 00:01:51,520
+Blime.
+
+33
+00:01:52,280 --> 00:01:53,140
+And look at the evidence.
+
+34
+00:01:54,120 --> 00:01:55,800
+The amount row is gone.
+
+35
+00:01:57,080 --> 00:01:58,580
+Nobody said five thousand.
+
+36
+00:01:59,420 --> 00:02:01,600
+So it never reaches the thing that moves
+money.
+
+37
+00:02:02,720 --> 00:02:04,480
+Now it mishears the name.
+
+38
+00:02:05,720 --> 00:02:07,640
+Confidence drops below the floor.
+
+39
+00:02:09,160 --> 00:02:10,740
+Two reasons now.
+
+40
+00:02:11,560 --> 00:02:13,460
+And the floor is not a warning.
+
+41
+00:02:15,080 --> 00:02:17,160
+It removes that word from the witness set.
+
+42
+00:02:18,000 --> 00:02:19,960
+So the recipient has no witness.
+
+43
+00:02:21,620 --> 00:02:23,480
+One mechanism, two doors in.
+
+44
+00:02:24,500 --> 00:02:26,900
+Same sentence, one word removed.
+
+45
+00:02:28,400 --> 00:02:29,860
+Five hundred dollars.
+
+46
+00:02:30,960 --> 00:02:34,700
+The agent still guesses USD right there in
+the form.
+
+47
+00:02:35,300 --> 00:02:35,980
+Block.
+
+48
+00:02:37,640 --> 00:02:38,900
+The currency row is gone.
+
+49
+00:02:39,740 --> 00:02:41,980
+Dollars does not say whose dollars.
+
+50
+00:02:43,760 --> 00:02:44,800
+Last one.
+
+51
+00:02:46,080 --> 00:02:49,460
+This registry has a check that is not
+implemented yet.
+
+52
+00:02:50,600 --> 00:02:51,860
+It refuses to build.
+
+53
+00:02:53,580 --> 00:02:54,620
+Not warns.
+
+54
+00:02:56,760 --> 00:02:57,480
+Refuses.
+
+55
+00:02:58,460 --> 00:03:01,240
+And if I take a checker away, three down
+to two.
+
+56
+00:03:02,120 --> 00:03:02,460
+Same answer.
+
+57
+00:03:03,500 --> 00:03:07,380
+Most systems here just quietly have one
+fewer check.
+
+58
+00:03:08,040 --> 00:03:11,160
+To be precise, this is the reference,
+registry.
+
+59
+00:03:12,180 --> 00:03:16,540
+The worker's own factory path builds fine
+either way, because its lint compares
+
+60
+00:03:16,540 --> 00:03:18,460
+against the same table it came from.
+
+61
+00:03:19,600 --> 00:03:21,640
+That is written up in the architecture
+doc.
+
+62
+00:03:22,880 --> 00:03:24,540
+So not more accurate.
+
+63
+00:03:25,760 --> 00:03:28,000
+The direction of being wrong has been
+changed.
+
+64
+00:03:29,260 --> 00:03:31,180
+Three things I did not do.
+
+65
+00:03:32,160 --> 00:03:34,320
+The threats outside the scope are on this
+page.
+
+66
+00:03:35,120 --> 00:03:39,600
+The quota counters strong consistency is
+verified on cloud flare.
+
+67
+00:03:40,560 --> 00:03:42,080
+Twelve concurrent requests.
+
+68
+00:03:42,880 --> 00:03:45,440
+66 of 66 in flight pairs.
+
+69
+00:03:45,980 --> 00:03:46,380
+Overlapping.
+
+70
+00:03:47,180 --> 00:03:48,900
+Serial numbers distinct and contiguous.
+
+71
+00:03:49,960 --> 00:03:55,060
+But that is one consciently level, not
+arbitrary contracy, and it does not cover
+
+72
+00:03:55,060 --> 00:03:56,120
+durable object eviction.
+
+73
+00:03:57,440 --> 00:04:02,700
+And the full end to end, chain, browser,
+live, socket, real, transcription, gate,
+
+74
+00:04:03,020 --> 00:04:04,600
+has never been run once.
+
+75
+00:04:05,520 --> 00:04:10,360
+A system that claims it will not wrongly
+allow and is vague about its own boundary,
+
+76
+00:04:10,840 --> 00:04:12,000
+has devalued the claim.
+
+77
+00:04:13,060 --> 00:04:14,300
+So that is the boundary.
+
+78
+00:04:15,160 --> 00:04:16,660
+Thanks for watching.

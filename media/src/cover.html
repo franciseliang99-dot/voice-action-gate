@@ -1,0 +1,67 @@
+<!doctype html><meta charset="utf-8">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1920px;height:1080px;overflow:hidden;
+       background:radial-gradient(1300px 900px at 80% 12%,#15283e 0%,#0a0f16 64%);
+       color:#e8edf4;font:400 16px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif;
+       display:grid;grid-template-columns:1fr 838px;align-items:center;
+       column-gap:74px;padding:0 104px}
+  .kicker{font-size:24px;letter-spacing:.32em;text-transform:uppercase;
+          color:#6d8aa8;font-weight:600}
+  h1{font-size:112px;line-height:.98;letter-spacing:-.035em;font-weight:700;margin:24px 0 0}
+  h1 .g{background:linear-gradient(94deg,#4fd1c5,#63b3ed 58%,#9f7aea);
+        -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .lede{font-size:34px;line-height:1.44;color:#b6c4d6;margin-top:32px;font-weight:300}
+  .lede b{color:#e8edf4;font-weight:600}
+  .foot{margin-top:44px;font-size:23px;line-height:1.5;color:#5f7085}
+  .foot b{color:#93a7bd;font-weight:600}
+
+  .panel{background:rgba(13,19,28,.72);border:1px solid #1e2b3b;border-radius:22px;
+         padding:40px 38px 36px}
+  .lbl{font:600 19px/1 -apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;
+       color:#5f7085;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+  .lbl::after{content:"";flex:1;height:1px;background:#1e2b3b}
+  .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .w{font:500 25px/1 "SF Mono",Menlo,monospace;padding:14px 17px;border-radius:10px;
+     background:#141d29;border:1px solid #24313f;color:#93a7bd;white-space:nowrap}
+  .w.ok{background:rgba(79,209,197,.13);border-color:#2f8b83;color:#7fe6da}
+  .w.no{background:rgba(245,101,101,.11);border-color:#8b3a3a;color:#ff9b9b}
+  .sep{height:1px;background:#1a2431;margin:34px 0}
+  .v{margin-top:24px;padding:17px 26px;border-radius:12px;display:flex;align-items:center;
+     gap:14px;font:600 27px/1 -apple-system,sans-serif}
+  .v small{font-weight:400;font-size:21px;opacity:.85;letter-spacing:.01em}
+  .v.a{background:rgba(79,209,197,.11);border:1.5px solid #2f8b83;color:#7fe6da}
+  .v.b{background:rgba(245,101,101,.10);border:1.5px solid #8b3a3a;color:#ff9b9b}
+</style>
+
+<div>
+  <div class="kicker">AssemblyAI Voice Agent Hackathon</div>
+  <h1>Voice <span class="g">Action&nbsp;Gate</span></h1>
+  <p class="lede">An irreversible action runs only if <b>every argument</b> traces back
+     to words you <b>actually said</b>.<br>Missing evidence is a refusal &mdash;
+     there is <b>no code path</b> to &ldquo;go ahead anyway.&rdquo;</p>
+  <p class="foot">A <b>capability</b>, not a check: the <b>Execute</b> credential has
+     exactly <b>one</b> construction site &mdash; and the witness set is built from the
+     transcript <b>before</b> the proposal is visible.</p>
+</div>
+
+<div class="panel">
+  <div class="lbl">What you said</div>
+  <div class="row">
+    <span class="w">send</span>
+    <span class="w ok">five&nbsp;hundred&nbsp; &rarr; &nbsp;500</span>
+    <span class="w ok">US&nbsp;dollars&nbsp; &rarr; &nbsp;USD</span>
+    <span class="w ok">to&nbsp;Alice</span>
+  </div>
+  <div class="v a">ALLOW <small>3 / 3 arguments grounded</small></div>
+
+  <div class="sep"></div>
+
+  <div class="lbl">What the model proposed</div>
+  <div class="row">
+    <span class="w no">amount&nbsp; = &nbsp;5000</span>
+    <span class="w no">currency&nbsp; = &nbsp;EUR</span>
+    <span class="w ok">to&nbsp;Alice</span>
+  </div>
+  <div class="v b">BLOCK <small>no witness &rarr; no credential</small></div>
+</div>

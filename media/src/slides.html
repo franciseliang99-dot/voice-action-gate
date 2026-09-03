@@ -1,0 +1,222 @@
+<!doctype html><meta charset="utf-8">
+<style>
+  @page{size:1920px 1080px;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#0a0f16}
+  body{font:400 16px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif;color:#e8edf4}
+  .s{width:1920px;height:1080px;page-break-after:always;position:relative;
+     padding:96px 112px;overflow:hidden;
+     background:radial-gradient(1300px 900px at 82% 8%,#15283e 0%,#0a0f16 66%);
+     display:flex;flex-direction:column;justify-content:center}
+  .s:last-child{page-break-after:auto}
+  .n{position:absolute;right:112px;bottom:56px;font:500 21px/1 "SF Mono",Menlo,monospace;color:#3d4d61}
+  .eyebrow{font:600 22px/1 -apple-system,sans-serif;letter-spacing:.3em;text-transform:uppercase;
+           color:#6d8aa8;margin-bottom:26px}
+  h2{font-size:66px;line-height:1.1;letter-spacing:-.025em;font-weight:700;margin-bottom:34px}
+  /* 🩸 刻意【不用】 -webkit-background-clip:text —— 它在 Chrome 的 --print-to-pdf
+     路径下会把背景盒子的边一起画出来(截图路径不会)。同一份 HTML 两条渲染路径
+     结果不同,这就是"捕获方式会换掉产物"。PDF 用实色。 */
+  h2 .g{color:#5ecfd6}
+  p{font-size:33px;line-height:1.5;color:#b6c4d6;font-weight:300;max-width:1520px}
+  p+p{margin-top:24px}
+  b{color:#e8edf4;font-weight:600}
+  .dim{color:#7a8ca2}
+  ul{list-style:none;margin-top:14px}
+  li{font-size:31px;line-height:1.45;color:#b6c4d6;font-weight:300;padding-left:44px;
+     position:relative;margin-top:22px;max-width:1520px}
+  li::before{content:"";position:absolute;left:10px;top:16px;width:11px;height:11px;
+             border-radius:3px;background:#4fd1c5}
+  li.x::before{background:#f56565}
+  code,.mono{font-family:"SF Mono",Menlo,monospace;font-size:.92em;
+        background:#141d29;border:1px solid #24313f;border-radius:7px;padding:3px 9px;color:#9fd6ff}
+  table{border-collapse:collapse;margin-top:20px;width:100%;max-width:1620px}
+  th,td{text-align:left;padding:17px 20px;font-size:26px;border-bottom:1px solid #1c2735;
+        color:#b6c4d6;font-weight:300;vertical-align:top}
+  th{color:#6d8aa8;font-weight:600;font-size:21px;letter-spacing:.14em;text-transform:uppercase;
+     border-bottom:1px solid #2b3a4d}
+  .ok,.bad,.warn{font-weight:500;white-space:nowrap}
+  .ok{color:#7fe6da}.bad{color:#ff9b9b}.warn{color:#f0c674}
+  .big{font-size:52px;line-height:1.28;font-weight:300;color:#dbe4ef;max-width:1560px}
+  .big b{font-weight:700}
+  .cards{display:flex;gap:26px;margin-top:34px}
+  .card{flex:1;background:rgba(13,19,28,.7);border:1px solid #1e2b3b;border-radius:18px;padding:32px 30px}
+  .card h3{font-size:27px;font-weight:600;color:#e8edf4;margin-bottom:14px}
+  .card p{font-size:25px;line-height:1.45;margin:0}
+  .rule{height:1px;background:#1e2b3b;margin:38px 0}
+  .kick{font-size:29px;color:#f0c674;font-weight:400;margin-top:30px;max-width:1520px;line-height:1.45}
+</style>
+
+<!-- 1 -->
+<section class="s">
+  <div class="eyebrow">AssemblyAI Voice Agent Hackathon</div>
+  <h2 style="font-size:104px;margin-bottom:30px">Voice <span class="g">Action Gate</span></h2>
+  <p class="big">An irreversible action runs only if <b>every argument</b> traces back
+     to words you <b>actually said</b>.</p>
+  <p style="margin-top:34px">Missing evidence is a refusal. There is <b>no code path</b>
+     to &ldquo;go ahead anyway.&rdquo;</p>
+  <div class="n">1</div>
+</section>
+
+<!-- 2 -->
+<section class="s">
+  <div class="eyebrow">The problem</div>
+  <h2>One token apart.<br>A factor of <span class="g">ten</span>.</h2>
+  <p class="big"><span class="mono">transfer five hundred</span><br>
+     <span class="mono">transfer five thousand</span></p>
+  <p style="margin-top:36px">Acoustically close. Ten times apart. This is why voice agents in
+     banking, healthcare and insurance are still mostly <b>read-only</b> &mdash; happy to read
+     you a balance, unwilling to move money.</p>
+  <div class="n">2</div>
+</section>
+
+<!-- 3 -->
+<section class="s">
+  <div class="eyebrow">Why not just raise accuracy</div>
+  <h2>Accuracy is an <span class="g">asymptote</span>.</h2>
+  <p>It never reaches a point where executing an <b>irreversible</b> action on a guess
+     becomes acceptable. So this project does not try to make the failure rarer.
+     <b>It changes what the failure does.</b></p>
+  <div class="cards">
+    <div class="card"><h3>A wrong block</h3>
+      <p class="dim">The user repeats one sentence.</p></div>
+    <div class="card"><h3>A wrong pass</h3>
+      <p class="dim">Real money moves. Nobody gets to repeat anything.</p></div>
+  </div>
+  <p class="kick">The two directions are not symmetric &mdash; so the system is not built symmetric.</p>
+  <div class="n">3</div>
+</section>
+
+<!-- 4 -->
+<section class="s">
+  <div class="eyebrow">The mechanism</div>
+  <h2>A <span class="g">capability</span>, not a check.</h2>
+  <p>Code that performs an irreversible action does not accept arguments. It accepts an
+     <code>Execute</code> credential &mdash; and that credential has <b>exactly one
+     construction site</b>: the gate.</p>
+  <ul>
+    <li>The gate mints it only when <b>every argument</b> of the proposal is grounded in a
+        witness drawn from the word-level transcript.</li>
+    <li class="x">&ldquo;I could not tell&rdquo; is a <b>refusal</b>, never a pass.</li>
+  </ul>
+  <p class="kick">A check can be forgotten at one call site. A missing credential cannot be
+     &mdash; there is no expression you could write that produces one.</p>
+  <div class="n">4</div>
+</section>
+
+<!-- 5 -->
+<section class="s">
+  <div class="eyebrow">The load-bearing detail</div>
+  <h2>Witnesses are built <span class="g">before</span><br>the proposal is visible.</h2>
+  <p>The witness set is generated from the <b>transcript alone</b>. The component that
+     produces it is structurally unable to see what the model proposed.</p>
+  <p>Otherwise a model that invents a number gets to pick its own search query &mdash; and an
+     unrelated number said thirty seconds earlier becomes its evidence.</p>
+  <p class="kick">This is a <b>red line in the code layout</b>, not a convention: the proposal
+     is not a parameter of the witness generator, so &ldquo;just peek at it&rdquo; is not
+     an option a future edit can take.</p>
+  <div class="n">5</div>
+</section>
+
+<!-- 6 -->
+<section class="s">
+  <div class="eyebrow">The second detail</div>
+  <h2>The normalizer is a<br><span class="g">partial function</span> on purpose.</h2>
+  <p>Turning <span class="mono">five hundred</span> into <span class="mono">500</span> is
+     allowed to answer <b>UNDECODABLE</b> &mdash; and UNDECODABLE is not a pass.</p>
+  <p>A normalizer with a fallback return value quietly converts <b>&ldquo;I cannot read
+     this&rdquo;</b> into <b>&ldquo;I believe it equals something&rdquo;</b>. That is the
+     failure direction that costs money.</p>
+  <p class="kick">Concretely: a bare &ldquo;dollars&rdquo; does not decode. It does not
+     determine <i>which</i> dollar &mdash; so it earns no witness, and the transfer blocks.
+     That behaviour is deliberate, and the demo shows it.</p>
+  <div class="n">6</div>
+</section>
+
+<!-- 7 -->
+<section class="s">
+  <div class="eyebrow">What runs where</div>
+  <h2>Nothing sensitive passes<br>through <span class="g">our</span> server.</h2>
+  <table>
+    <tr><th>Stage</th><th>Where</th><th>Why there</th></tr>
+    <tr><td>Microphone &rarr; streaming transcript</td><td>Browser &rarr; AssemblyAI, direct</td>
+        <td>Audio never reaches us; the main API key never leaves the edge</td></tr>
+    <tr><td>Temporary session token</td><td>Worker (edge)</td>
+        <td>Short TTL, and it stamps the session cap</td></tr>
+    <tr><td>The gate</td><td>Worker, Python on Pyodide</td>
+        <td>Dependency-free; the same unit runs locally and at the edge</td></tr>
+    <tr><td>Daily issuance quota</td><td>Durable Object</td>
+        <td>Single-threaded, strongly consistent &mdash; a counter that is only eventually
+            consistent cannot honestly be called fail-closed</td></tr>
+  </table>
+  <div class="n">7</div>
+</section>
+
+<!-- 8 -->
+<section class="s">
+  <div class="eyebrow">Evidence &mdash; measured, and not</div>
+  <h2>What we actually <span class="g">ran</span>.</h2>
+  <table>
+    <tr><th>Claim</th><th>Status</th><th>Observation</th></tr>
+    <tr><td>The gate runs unchanged on the edge runtime</td><td class="ok">measured</td>
+        <td>Whole suite executed <b>inside the Worker</b>: 151 / 152 pass</td></tr>
+    <tr><td>&hellip; the one that did not</td><td class="warn">did not run</td>
+        <td>A thread-safety property; the runtime is single-threaded, so it is inapplicable
+            there &mdash; thread-safety evidence stays local-only</td></tr>
+    <tr><td>Session cap is enforced by AssemblyAI, not by our timer</td><td class="ok">measured</td>
+        <td>Server closes at <span class="mono">expires_at + ~60 s</span>,
+            <span class="mono">error_code 3008</span>. The ~60 s is
+            <b>observed (n=2), not documented</b></td></tr>
+    <tr><td>The daily quota has teeth</td><td class="ok">measured</td>
+        <td>With limit = 2, three requests give <b>502 / 502 / 429</b>; the counter stops at 2</td></tr>
+    <tr><td>End-to-end with a live microphone</td><td class="bad">not yet run</td>
+        <td>Token minting through the Worker is verified; the full mic &rarr; transcript &rarr;
+            gate path needs a real microphone</td></tr>
+  </table>
+  <div class="n">8</div>
+</section>
+
+<!-- 9 -->
+<section class="s">
+  <div class="eyebrow">A public URL that bills by the second</div>
+  <h2>The cost boundary is an<br><span class="g">equation</span>, not a promise.</h2>
+  <p class="big" style="font-size:44px"><span class="mono">worst case per connection
+     = cap + ~60 s</span><br>
+     <span class="mono">worst case per day = tokens issued &times; (cap + ~60 s)</span></p>
+  <p style="margin-top:34px">Both factors are set by our Worker: it issues the token and it
+     writes the cap. The <b>enforcement</b> is on AssemblyAI's side, which is why it cannot
+     be bypassed by editing the frontend &mdash; the connection is not held by the frontend.</p>
+  <p class="kick">The <span class="mono">~60 s</span> is an observed lag, not a documented
+     guarantee. Stated that way on purpose.</p>
+  <div class="n">9</div>
+</section>
+
+<!-- 10 -->
+<section class="s">
+  <div class="eyebrow">Threat model &mdash; stated, not implied</div>
+  <h2>What this does <span class="g">not</span> defend against.</h2>
+  <ul>
+    <li class="x">A <b>malicious client</b>. The gate consumes a transcript the client supplies,
+        so a client can forge one &mdash; but the adversary here is the <b>language model</b>,
+        and the person at the microphone is the party being protected. Forging your own
+        transcript is lying to yourself.</li>
+    <li class="x">A wrong transcript that is <b>internally consistent</b>. If the recognizer
+        confidently mishears, and the model proposes exactly what was misheard, the arguments
+        are grounded and the action passes. The gate proves <b>provenance</b>, not truth.</li>
+  </ul>
+  <p class="kick">Both are written into the architecture document, because &ldquo;our threat
+     model excludes this&rdquo; and &ldquo;we did not think of it&rdquo; look identical in a
+     demo. Only one of them is written down in advance.</p>
+  <div class="n">10</div>
+</section>
+
+<!-- 11 -->
+<section class="s">
+  <div class="eyebrow">In one line</div>
+  <h2 style="font-size:76px">The failure mode of a voice agent<br>should be
+      <span class="g">&ldquo;say that again&rdquo;</span>,<br>not a wire transfer.</h2>
+  <div class="rule"></div>
+  <p>A dependency-free Python unit you can drop into someone else's agent. The tests pin both
+     properties &mdash; including a mutation arm that turns red if the structural separation
+     is undone.</p>
+  <div class="n">11</div>
+</section>

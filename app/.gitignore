@@ -1,0 +1,8 @@
+# Build outputs. Both are copies of code that lives elsewhere in this repo or in
+# a pip package; committing them would create a second gate that can drift.
+/worker/gate/
+/worker/vendor/
+# (SDK venv 现在建在仓外的 mktemp 目录,不再需要 ignore)
+/.wrangler/
+/node_modules/
+/.dev.vars

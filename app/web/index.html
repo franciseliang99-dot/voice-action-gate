@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice Action Gate</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header>
+  <h1>Voice Action Gate</h1>
+  <p class="tag">An irreversible action runs only if every one of its arguments
+     was <em>actually spoken</em>. Anything the gate cannot decide is a block.</p>
+</header>
+
+<main>
+  <section class="panel" id="panel-say">
+    <h2>1 · What you said</h2>
+    <div class="row">
+      <button id="btn-mic" class="primary">Start microphone</button>
+      <button id="btn-sample" class="ghost">Use a sample instead</button>
+      <button id="btn-sample-bare" class="ghost">Sample: bare &ldquo;dollars&rdquo;</button>
+      <span id="status" class="status">idle</span>
+    </div>
+    <p class="hint">Try: <code>send five hundred US dollars to Alice</code>&nbsp;&mdash;
+       then try it again saying just <code>dollars</code>. A bare &ldquo;dollars&rdquo;
+       does not say <em>which</em> dollars, so the gate refuses to invent one.</p>
+    <div id="transcript" class="transcript" aria-live="polite"></div>
+    <p class="meta" id="tmeta"></p>
+  </section>
+
+  <section class="panel" id="panel-propose">
+    <h2>2 · What the agent proposes</h2>
+    <p class="hint">These fields are <strong>editable on purpose</strong>. Change
+       them to whatever a hallucinating or compromised agent might emit, then
+       ask the gate.</p>
+    <div class="fields">
+      <label>action <input id="f-action" value="transfer" readonly></label>
+      <label>amount <input id="f-amount" placeholder="500"></label>
+      <label>currency <input id="f-currency" placeholder="USD"></label>
+      <label>to <input id="f-to" placeholder="Alice"></label>
+    </div>
+    <div class="row">
+      <button id="btn-gate" class="primary">Ask the gate</button>
+      <button id="btn-tamper" class="ghost">Tamper: &times;10 the amount</button>
+      <button id="btn-misheard" class="ghost">Simulate: it misheard the name</button>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-verdict">
+    <h2>3 · Verdict</h2>
+    <div id="verdict" class="verdict empty">no decision yet</div>
+    <div id="evidence"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Audio streams from this browser straight to AssemblyAI with a short-lived
+     token. It never reaches our server &mdash; so we cannot store it.
+     The gate reads a transcript the client sent: that boundary is documented,
+     not overlooked.</p>
+</footer>
+<script src="./app.js"></script>
+</body>
+</html>

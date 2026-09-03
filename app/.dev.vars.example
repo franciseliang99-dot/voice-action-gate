@@ -1,0 +1,7 @@
+# Copy to `.dev.vars` for `wrangler dev`; set the real value in production with
+#   wrangler secret put ASSEMBLYAI_API_KEY
+# `.dev.vars` is gitignored. Leave the line below empty and paste the key there.
+#
+# The key stays server-side: the browser only ever receives a temporary token
+# minted from it, good for one connection for TOKEN_TTL_SECONDS.
+ASSEMBLYAI_API_KEY=
