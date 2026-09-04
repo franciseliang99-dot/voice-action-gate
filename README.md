@@ -186,6 +186,23 @@ pins in its own docstring, so the IDs are provenance labels, not required readin
 Built for the **AssemblyAI Voice Agent Hackathon** (lablab.ai, Sep 1–30, 2026) with
 Universal-Streaming v3 and the Voice Agent API.
 
+## Disclosure
+
+**How this was built.** AI coding assistants were used throughout development, under
+human direction and review. The design, the threat model, the failure analysis and
+every claim in this repository are the author's own. No pre-existing code was carried
+in: methods are reusable, the implementations here were written from scratch for this
+entry, and everything in this repository was committed inside the hackathon window.
+
+**What the running system does — and does not — decide.** Speech recognition is
+machine-produced and can be wrong; that assumption is the premise of this project
+rather than a caveat to it. The gate itself is deterministic code, not a model: it
+mints or refuses a capability by comparing an action's arguments against the
+word-level transcript, and a comparison it cannot make is a refusal. The "agent" in
+the demo is a regex, deliberately, so that being wrong is the normal case. Nothing
+here executes a real transaction or makes an automated decision about a person — the
+execute path is simulated end to end.
+
 ## Who built this
 
 I build software with adversarial review loops and deterministic safety gates —
